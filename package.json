@@ -1,0 +1,14 @@
+{
+  "name": "@dorrietang/candy-diagram-mapping-candies-to-features",
+  "main": "2f19c18aed13cef5@617.js",
+  "version": "617.0.0",
+  "homepage": "https://observablehq.com/@dorrietang/candy-diagram-mapping-candies-to-features",
+  "author": {
+    "name": "Dorrie Tang",
+    "url": "https://observablehq.com/@dorrietang"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
