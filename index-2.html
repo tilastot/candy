@@ -9,7 +9,8 @@ var step = 14;
 var width = 800;
 var height = (data.nodes.length - 1) * step + margin.top + margin.bottom;
 var y = d3.scalePoint(data.nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).map(d => d.id), [margin.top, height - margin.bottom]);
-
+var color = d3.scaleOrdinal(data.nodes.map(d => d.group).sort(d3.ascending), ["black", "orange"]);
+   
    var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -223,9 +224,5 @@ function _graph(data,source_list)
 
   return {nodes, links};
 }
-
-function _source_list(){return(
-new Set()
-)}
 
 </script>
