@@ -7,7 +7,7 @@
 var margin = {top: 20, right: 20, bottom: 20, left: 100};
 var step = 14;
 var height = (data.nodes.length - 1) * step + margin.top + margin.bottom;
-var y = d3.scalePoint(nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).map(d => d.id), [margin.top, height - margin.bottom]);
+var y = d3.scalePoint(data.nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).map(d => d.id), [margin.top, height - margin.bottom]);
 
    var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
