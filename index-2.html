@@ -6,6 +6,7 @@
 <script>
 var margin = {top: 20, right: 20, bottom: 20, left: 100};
 var step = 14;
+var width = 800;
 var height = (data.nodes.length - 1) * step + margin.top + margin.bottom;
 var y = d3.scalePoint(data.nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).map(d => d.id), [margin.top, height - margin.bottom]);
 
