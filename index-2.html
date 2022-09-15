@@ -69,7 +69,7 @@ var y = d3.scalePoint(data.nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).m
     const {source, target, value} = link;
     source.sourceLinks.push(link);
     target.targetLinks.push(link);
-    source_list.add(link.source.id)
+    source_list = d3.set().add(link.source.id);
   }
 
    
