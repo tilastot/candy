@@ -46,6 +46,33 @@ var y = d3.scalePoint(data.nodes.sort((a,b) => d3.ascending(+a.rank, +b.rank)).m
 
     `);
 
+   const nodes = data.nodes.map(({id, group, sugarpercent, rank, avg, count}) => ({
+    id,
+    sourceLinks: [],
+    targetLinks: [],
+    group,
+    rank,
+    sugarpercent,
+    avg,
+    count
+  }));
+
+  const nodeById = new Map(nodes.map(d => [d.id, d]));
+
+  const links = data.links.map(({source, target, value}) => ({
+    source: nodeById.get(source),
+    target: nodeById.get(target),
+    value
+  }));
+  
+  for (const link of links) {
+    const {source, target, value} = link;
+    source.sourceLinks.push(link);
+    target.targetLinks.push(link);
+    source_list.add(link.source.id)
+  }
+
+   
   const label = svg.append("g")
       .attr("font-size", 12)
       .attr("font-weight", 300)
